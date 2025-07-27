@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: github-actions
     directories:
       - "/"
-      - "/.github/actions/*/action.yaml"
+      - "/.github/actions/setup-devenv"
     schedule:
       interval: weekly
   - package-ecosystem: npm
