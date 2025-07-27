@@ -17,7 +17,7 @@ jobs:
       - uses: ./.github/actions/setup-devenv
 
       - name: Run pre-commit
-        run: pre-commit run --all-files
+        run: devenv shell pre-commit run --all-files
 
       - name: Run tsc
-        run: npm run lint:tsc
+        run: devenv shell npm run lint:tsc
