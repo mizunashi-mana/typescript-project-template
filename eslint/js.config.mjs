@@ -209,12 +209,9 @@ export default defineConfig([
   },
 ]);
 
-function buildNoRestrictedRule(keys: Array<keyof typeof restrictedGlobals>): Array<{
-  name: string;
-  message: string;
-}> {
+function buildNoRestrictedRule(keys) {
   return Object.entries(restrictedGlobals)
-    .filter(([key]) => (keys as string[]).includes(key))
+    .filter(([key]) => keys.includes(key))
     .map(([key, restrictedGlobal]) => {
       return {
         name: key,

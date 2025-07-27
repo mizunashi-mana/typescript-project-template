@@ -2,6 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "lint:eslint": "git ls-files -- '*.js' '*.jsx' '*.mjs' '*.ts' '*.tsx' | xargs eslint --cache --fix",
     "lint:tsc": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,8 +17,6 @@
     "@playwright/mcp": "^0.0.32",
     "@playwright/test": "^1.54.1",
     "@stylistic/eslint-plugin": "^5.2.2",
-    "@types/eslint": "^9.6.1",
-    "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/node": "^24.1.0",
     "eslint": "^9.32.0",
     "eslint-import-resolver-typescript": "^4.4.4",
