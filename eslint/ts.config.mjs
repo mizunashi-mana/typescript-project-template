@@ -1,8 +1,6 @@
-import { type Linter } from 'eslint';
 import { defineConfig } from 'eslint/config';
 import * as typescriptEslint from 'typescript-eslint';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- Original type definition issue
 export default defineConfig(typescriptEslint.config(
   {
     rules: {
@@ -254,4 +252,4 @@ export default defineConfig(typescriptEslint.config(
     files: ['**/*.{js,jsx,mjs,cjs}'],
     extends: [typescriptEslint.configs.disableTypeChecked],
   },
-) as Linter.Config[]);
+));

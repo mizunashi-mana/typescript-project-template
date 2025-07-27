@@ -1,7 +1,6 @@
 import eslintJs from '@eslint/js';
 import pluginEslintComments from '@eslint-community/eslint-plugin-eslint-comments/configs';
 import stylistic from '@stylistic/eslint-plugin';
-import { type Linter } from 'eslint';
 import { defineConfig } from 'eslint/config';
 import { importX } from 'eslint-plugin-import-x';
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
@@ -19,10 +18,8 @@ export default defineConfig([
     indent: 2,
     semi: true,
   }),
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- Original type definition issue
-  importX.flatConfigs.recommended as Linter.Config,
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- Original type definition issue
-  ...(typescriptEslint.config(
+  importX.flatConfigs.recommended,
+  ...typescriptEslint.config(
     typescriptEslint.configs.recommended,
     typescriptEslint.configs.strict,
     typescriptEslint.configs.recommendedTypeChecked,
@@ -31,14 +28,12 @@ export default defineConfig([
       files: ['**/*.{ts,tsx}'],
       extends: [importX.flatConfigs.typescript],
     },
-  ) as Linter.Config[]),
+  ),
   pluginEslintComments.recommended,
   pluginNode.configs['flat/recommended'],
   pluginPromise.configs['flat/recommended'],
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- Original type definition issue
-  pluginReact.configs.flat.recommended!,
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- Original type definition issue
-  pluginReact.configs.flat['jsx-runtime']!,
+  pluginReact.configs.flat.recommended,
+  pluginReact.configs.flat['jsx-runtime'],
   pluginReactHooks.configs['recommended-latest'],
   pluginJsxA11y.flatConfigs.recommended,
   pluginPlaywright.configs['flat/recommended'],
