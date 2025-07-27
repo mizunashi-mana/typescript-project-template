@@ -19,7 +19,9 @@ export default defineConfig([
     indent: 2,
     semi: true,
   }),
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- Original type definition issue
   importX.flatConfigs.recommended as Linter.Config,
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion -- Original type definition issue
   ...(typescriptEslint.config(
     typescriptEslint.configs.recommended,
     typescriptEslint.configs.strict,
@@ -33,9 +35,9 @@ export default defineConfig([
   pluginEslintComments.recommended,
   pluginNode.configs['flat/recommended'],
   pluginPromise.configs['flat/recommended'],
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- 元々の型定義の問題
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- Original type definition issue
   pluginReact.configs.flat.recommended!,
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- 元々の型定義の問題
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- Original type definition issue
   pluginReact.configs.flat['jsx-runtime']!,
   pluginReactHooks.configs['recommended-latest'],
   pluginJsxA11y.flatConfigs.recommended,
