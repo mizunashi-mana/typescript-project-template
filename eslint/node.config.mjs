@@ -17,6 +17,7 @@ export default defineConfig([
     rules: {
       // Use eslint-plugin-import-x for TypeScript imports
       'n/no-missing-import': 'off',
+      'n/no-unpublished-import': 'off',
     },
   },
 ]);
