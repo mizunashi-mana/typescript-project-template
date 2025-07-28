@@ -195,16 +195,19 @@ export default defineConfig([
     },
   },
   {
-    files: ['src/{manager,viewer}/main.tsx'],
-    rules: {
-      'no-restricted-globals': ['error', ...buildNoRestrictedRule(['crypto', 'navigator'])],
-    },
-  },
-  {
-    files: ['src/**/*.stories.{ts,tsx}', 'tests/**/*'],
+    files: ['**/*.stories.{ts,tsx}'],
     rules: {
       'no-console': 'off',
       'no-alert': 'off',
+    },
+  },
+  {
+    files: ['**/*.test.ts'],
+    rules: {
+      'max-nested-callbacks': [
+        'error',
+        { max: 4 },
+      ],
     },
   },
 ]);

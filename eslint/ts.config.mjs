@@ -249,6 +249,12 @@ export default defineConfig(typescriptEslint.config(
     },
   },
   {
+    files: ['**/*.test.{ts,tsx}'],
+    rules: {
+      '@typescript-eslint/no-non-null-assertion': 'off',
+    },
+  },
+  {
     files: ['**/*.{js,jsx,mjs,cjs}'],
     extends: [typescriptEslint.configs.disableTypeChecked],
   },
