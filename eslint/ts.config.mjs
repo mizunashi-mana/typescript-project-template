@@ -245,13 +245,17 @@ export default defineConfig(typescriptEslint.config(
   {
     files: ['**/*.d.ts'],
     rules: {
+      // Declaration files may contain unused variables since they are not having implementations
       '@typescript-eslint/no-unused-vars': 'off',
     },
   },
   {
     files: ['**/*.test.{ts,tsx}'],
     rules: {
+      // Non-null assertions are often used in tests to shorthand assertions
       '@typescript-eslint/no-non-null-assertion': 'off',
+      // Mocking functions can lead to unbound method errors
+      '@typescript-eslint/unbound-method': 'off',
     },
   },
   {
